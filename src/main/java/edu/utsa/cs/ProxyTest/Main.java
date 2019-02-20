@@ -11,5 +11,6 @@ public class Main {
                 new ProxyClass());
 
         proxyInstance.methodA();
+        proxyInstance.methodB();
     }
 }
