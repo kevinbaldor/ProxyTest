@@ -5,8 +5,12 @@ import java.lang.reflect.Method;
 
 public class ProxyClass implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        IndirectCall ic = new IndirectCall();
-        ic.call();
-        return ic;
+        if(method.getName().equals("methodB")) {
+            IndirectCall ic = new IndirectCall();
+            ic.call();
+        } else {
+            System.out.println("Do nothing");
+        }
+        return 0;
     }
 }
